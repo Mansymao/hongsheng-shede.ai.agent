@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福建鸿生材料科技股份有限公司 - 2026年奖补项目申报清单</title>
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2d5f8a;
+            --accent: #e8943a;
+            --accent-light: #f5b971;
+            --bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c7a89;
+            --border: #dce3ec;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ===== Header (Sticky) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header h1 span {
+            color: var(--accent-light);
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        .header-meta {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* ===== Navigation (V2 order) ===== */
+        .nav {
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+        }
+        .nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+        .nav a:hover, .nav a.active {
+            color: white;
+            background: rgba(255,255,255,0.05);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px 60px;
+        }
+
+        /* ===== Section ===== */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 120px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card p {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ===== Info Grid ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+        }
+        .info-item .label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .info-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ===== Badge ===== */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .badge-national {
+            background: linear-gradient(135deg, #e74c3c22, #e74c3c11);
+            color: #c0392b;
+            border: 1px solid #e74c3c44;
+        }
+        .badge-province {
+            background: linear-gradient(135deg, #3498db22, #3498db11);
+            color: #2471a3;
+            border: 1px solid #3498db44;
+        }
+        .badge-city {
+            background: linear-gradient(135deg, #27ae6022, #27ae6011);
+            color: #1e8449;
+            border: 1px solid #27ae6044;
+        }
+        .badge-other {
+            background: linear-gradient(135deg, #8e44ad22, #8e44ad11);
+            color: #6c3483;
+            border: 1px solid #8e44ad44;
+        }
+
+        /* ===== Business Cards Grid ===== */
+        .biz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .biz-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .biz-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .biz-card .biz-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+        .biz-card h4 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .biz-card p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== Table ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 1600px;
+        }
+        thead th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tbody tr:hover {
+            background: #f0f5ff;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .level-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .level-national { background: #fde8e8; color: #c0392b; }
+        .level-province { background: #e8f0fe; color: #2471a3; }
+        .level-city { background: #e8f8e8; color: #1e8449; }
+        .level-district { background: #f3e8fd; color: #6c3483; }
+        .amount {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 15px;
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        /* ===== Tech Tags ===== */
+        .tech-tag {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            background: #e8f4fd;
+            color: #2471a3;
+            margin: 1px 2px;
+            white-space: nowrap;
+        }
+        .tech-tag.ai { background: #fde8f4; color: #c0392b; }
+        .tech-tag.hw { background: #e8fde8; color: #1e8449; }
+        .tech-tag.sw { background: #f3e8fd; color: #6c3483; }
+
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .stat-card .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Filter Buttons ===== */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            color: var(--text);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== Timeline ===== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+            padding: 18px 24px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 24px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .year {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .timeline-item h4 {
+            font-size: 15px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .timeline-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        .status-done {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            background: #27ae6022;
+            color: #27ae60;
+            font-weight: 600;
+        }
+        .status-progress {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            background: #f39c1222;
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        /* ===== Policy Links ===== */
+        .policy-ref a {
+            color: var(--info);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--info);
+            font-size: 13px;
+            transition: all 0.2s;
+            word-break: break-all;
+        }
+        .policy-ref a:hover {
+            color: var(--primary);
+            border-bottom-style: solid;
+        }
+        .policy-card a {
+            color: var(--info);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--info);
+            transition: all 0.2s;
+        }
+        .policy-card a:hover {
+            color: var(--primary);
+            border-bottom-style: solid;
+        }
+        .ext-icon {
+            display: inline-block;
+            font-size: 10px;
+            margin-left: 2px;
+            opacity: 0.6;
+        }
+
+        /* ===== Roadmap ===== */
+        .roadmap {
+            margin-top: 24px;
+        }
+        .roadmap-quarter {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+        .roadmap-label {
+            min-width: 72px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            padding-top: 6px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            padding: 8px 4px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .roadmap-items {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .roadmap-item {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid;
+            line-height: 1.5;
+            max-width: 280px;
+        }
+        .roadmap-item.national { background: #fde8e811; border-color: #e74c3c44; color: #c0392b; }
+        .roadmap-item.province { background: #e8f0fe11; border-color: #3498db44; color: #2471a3; }
+        .roadmap-item.city { background: #e8f8e811; border-color: #27ae6044; color: #1e8449; }
+        .roadmap-item.district { background: #f3e8fd11; border-color: #8e44ad44; color: #6c3483; }
+
+        /* ===== Unit Summary ===== */
+        .unit-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .unit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .unit-card .unit-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .unit-card .unit-count {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .unit-card .unit-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Lifecycle Bar (固定板块) ===== */
+        .lifecycle-bar {
+            margin-top: 20px;
+            padding: 20px 24px;
+            background: #f8f9fc;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .lifecycle-bar h4 {
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .lifecycle-steps {
+            display: flex;
+            gap: 0;
+            position: relative;
+        }
+        .lifecycle-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 4px;
+        }
+        .lifecycle-step .bar {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .lifecycle-step:nth-child(1) .bar { background: #3498db; }
+        .lifecycle-step:nth-child(2) .bar { background: #9b59b6; }
+        .lifecycle-step:nth-child(3) .bar { background: #27ae60; }
+        .lifecycle-step:nth-child(4) .bar { background: #e74c3c; }
+        .lifecycle-step .step-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .lifecycle-step .step-pct {
+            font-size: 18px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== Contact Bar (固定板块) ===== */
+        .contact-bar {
+            margin-top: 20px;
+            padding: 16px 28px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .contact-bar-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+            padding-right: 12px;
+            border-right: 2px solid var(--border);
+        }
+        .contact-bar-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .contact-bar-info {
+            font-size: 13px;
+            color: var(--text);
+        }
+        .contact-bar-info .cb-label {
+            color: var(--text-light);
+            margin-right: 4px;
+        }
+        .contact-bar-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .contact-bar-info a:hover {
+            color: var(--accent);
+        }
+        .contact-bar-sep {
+            width: 1px;
+            height: 28px;
+            background: var(--border);
+        }
+
+
+
+        /* ===== V2: Collapse Sections ===== */
+        .collapse-group {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 2px dashed var(--border);
+        }
+        .collapse-group-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .collapse-section {
+            margin-bottom: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .collapse-section summary {
+            padding: 18px 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
+            border-left: 4px solid var(--accent);
+            transition: background 0.2s;
+        }
+        .collapse-section summary::-webkit-details-marker { display: none; }
+        .collapse-section summary:hover { background: #f8f9fc; }
+        .collapse-section summary::before {
+            content: '\25B6';
+            font-size: 12px;
+            color: var(--accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .collapse-section[open] summary::before { transform: rotate(90deg); }
+        .collapse-section[open] summary {
+            border-bottom: 1px solid var(--border);
+            background: #f8f9fc;
+        }
+        .collapse-section .collapse-body {
+            padding: 24px 28px;
+            animation: fadeSlideIn 0.3s ease;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .header, .nav, .filter-bar { position: static; }
+            .section { page-break-inside: avoid; }
+            .collapse-section { break-inside: avoid; }
+            .collapse-section[open] summary { break-after: avoid; }
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .container { padding: 16px; }
+            .header-inner { padding: 16px; flex-direction: column; gap: 8px; }
+            .nav-inner { padding: 0 16px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .info-grid { grid-template-columns: 1fr; }
+            .contact-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .contact-bar-sep { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header + Nav ===== -->
+<div class="header">
+    <div class="header-inner">
+        <h1>福建鸿生材料科技股份有限公司 <span>2026年度奖补项目申报清单</span></h1>
+        <div class="header-meta">编制日期：2026年6月16日 &nbsp;|&nbsp; 证券代码：874903（新三板）</div>
+    </div>
+    <div class="nav">
+        <div class="nav-inner">
+            <a href="#projects" class="active">可申报项目清单</a>
+            <a href="#policy">政策依据汇总</a>
+            <a href="#tips">重要提示</a>
+            <a href="#company">企业详情 &#9660;</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ===== 1. 可申报项目清单（首屏第一板块） ===== -->
+    <div class="section" id="projects">
+        <div class="section-title">
+            <div class="icon">1</div>
+            2026年可申报奖补项目清单
+        </div>
+
+        <!-- 统计摘要 -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-num">12</div>
+                <div class="stat-label">可申报项目总数（经可行性筛选）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">~430+</div>
+                <div class="stat-label">预计奖补总额（万元）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">1</div>
+                <div class="stat-label">国家级项目</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">11</div>
+                <div class="stat-label">省/市级项目</div>
+            </div>
+        </div>
+
+        <!-- 层级筛选 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTable('all')">全部</button>
+            <button class="filter-btn" onclick="filterTable('national')">国家级</button>
+            <button class="filter-btn" onclick="filterTable('province')">省级</button>
+            <button class="filter-btn" onclick="filterTable('city')">市级</button>
+        </div>
+
+        <!-- 数据表格 -->
+        <div class="table-wrapper">
+            <table id="projectTable">
+                <thead>
+                    <tr>
+                        <th style="width:40px">序号</th>
+                        <th style="min-width:180px">可申报项目名称</th>
+                        <th style="min-width:100px">项目类别</th>
+                        <th style="min-width:110px">归口部门</th>
+                        <th style="min-width:80px">申报层级</th>
+                        <th style="min-width:80px">申报周期</th>
+                        <th style="min-width:100px">预计奖补金额（万元）</th>
+                        <th style="min-width:120px">关键技术方向</th>
+                        <th style="min-width:220px">申报核心条件</th>
+                        <th style="min-width:200px">所需材料</th>
+                        <th style="min-width:200px">政策依据（官方文件）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 1. 国家高新技术企业 -->
+                    <tr data-level="national">
+                        <td>1</td>
+                        <td><strong>国家高新技术企业认定</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>省科技厅/省财政厅/省税务局</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>6月/7月（两批）</td>
+                        <td class="amount">10-20 + 企业所得税15%</td>
+                        <td>
+                            <span class="tech-tag hw">绿色混凝土</span>
+                            <span class="tech-tag sw">智能制造</span>
+                            <span class="tech-tag hw">装配式建筑</span>
+                        </td>
+                        <td>注册满1年；核心自主知识产权；科技人员占比&ge;10%；研发费用占比达标（营收2亿以上企业&ge;3%）；高新技术产品收入占比&ge;60%</td>
+                        <td>高企认定申请书、知识产权证明、科研项目立项文件、科技成果转化材料、研发组织管理制度、近三年审计报告、近三年纳税申报表</td>
+                        <td class="policy-ref"><a href="https://czt.fj.gov.cn/zwgk/czxw/202605/t20260507_7145002.htm" target="_blank" rel="noopener">关于组织开展2026年度高新技术企业认定工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 2. 省级专精特新 -->
+                    <tr data-level="province">
+                        <td>2</td>
+                        <td><strong>省级专精特新中小企业认定</strong></td>
+                        <td><span class="category-tag">企业培育</span></td>
+                        <td>省工信厅/市工信局</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>全年（常态化）</td>
+                        <td class="amount">省级奖补+市级配套</td>
+                        <td>
+                            <span class="tech-tag hw">预应力管桩</span>
+                            <span class="tech-tag hw">装配式PC构件</span>
+                            <span class="tech-tag sw">数智化生产</span>
+                        </td>
+                        <td>有效期内创新型中小企业或科技型中小企业；专业化程度高、创新能力突出；营收和研发费用达到一定规模</td>
+                        <td>专精特新中小企业申请表、企业基本情况介绍、主导产品说明、知识产权清单、研发项目清单、财务报表</td>
+                        <td class="policy-ref"><a href="https://zqztc.fujian.gov.cn/zcy/policy/policy/detail?id=18537" target="_blank" rel="noopener">福建省工信厅关于常态化组织开展2026年度省级专精特新中小企业认定工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 3. 省级研发经费投入奖补 -->
+                    <tr data-level="province">
+                        <td>3</td>
+                        <td><strong>企业研发经费投入奖补</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>省科技厅/省财政厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>免申即享（年度兑现）</td>
+                        <td class="amount">最高600</td>
+                        <td>
+                            <span class="tech-tag hw">混凝土配比研发</span>
+                            <span class="tech-tag hw">再生骨料技术</span>
+                            <span class="tech-tag sw">BIM技术应用</span>
+                        </td>
+                        <td>年研发支出&ge;200万元且较上年增长&ge;100万元；研发费用可税前加计扣除；诚信经营、无严重失信</td>
+                        <td>免申即享，由科技厅比对税务数据自动兑现，企业无需主动申报</td>
+                        <td class="policy-ref"><a href="http://kjt.fujian.gov.cn/xxgk/gzdt/mtjj/202605/t20260529_7154086.htm" target="_blank" rel="noopener">福建省企业研发经费投入奖补实施细则<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 4. 省级绿色工厂 -->
+                    <tr data-level="province">
+                        <td>4</td>
+                        <td><strong>省级绿色工厂认定</strong></td>
+                        <td><span class="category-tag">绿色制造</span></td>
+                        <td>省工信厅/省节能中心</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>4-6月</td>
+                        <td class="amount">10-30</td>
+                        <td>
+                            <span class="tech-tag hw">绿色混凝土</span>
+                            <span class="tech-tag hw">再生资源利用</span>
+                            <span class="tech-tag sw">碳排放管理</span>
+                        </td>
+                        <td>用地集约化、原料无害化、生产洁净化、废物资源化、能源低碳化；通过ISO14001环境管理体系认证；能耗指标达行业先进</td>
+                        <td>绿色工厂自评价报告、第三方评价报告、环境管理体系证书、能源审计报告、碳排放核算报告</td>
+                        <td class="policy-ref">福建省工信厅《关于开展2026年度省级绿色制造申报推荐和自评价工作的通知》（闽工信函节能〔2026〕145号）</td>
+                    </tr>
+                    <!-- 5. 首批次新材料生产应用 -->
+                    <tr data-level="province">
+                        <td>5</td>
+                        <td><strong>首批次重点新材料生产应用奖励</strong></td>
+                        <td><span class="category-tag">新材料</span></td>
+                        <td>省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>4-5月</td>
+                        <td class="amount">按销售规模奖补</td>
+                        <td>
+                            <span class="tech-tag hw">再生骨料混凝土</span>
+                            <span class="tech-tag hw">高性能管桩</span>
+                            <span class="tech-tag ai">智能检测</span>
+                        </td>
+                        <td>独立法人；产品列入《福建省首批次重点新材料目录》；2025年销售额&ge;500万元；研发费占比&ge;3%；拥有发明专利或使用权</td>
+                        <td>申报表、发明专利证书、第三方检测报告、销售合同及发票、财务报表</td>
+                        <td class="policy-ref"><a href="https://www.fzcl.gov.cn/xjwz/zwgk/gggs/202604/t20260430_5316563.htm" target="_blank" rel="noopener">关于组织开展首批次重点新材料生产应用项目申报工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 6. 市技改投资补助 -->
+                    <tr data-level="city">
+                        <td>6</td>
+                        <td><strong>工业企业技术改造投资补助</strong></td>
+                        <td><span class="category-tag">技术改造</span></td>
+                        <td>市工信局/市财政局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>3-4月</td>
+                        <td class="amount">最高500（设备投资3%）</td>
+                        <td>
+                            <span class="tech-tag hw">生产线升级</span>
+                            <span class="tech-tag sw">数字化改造</span>
+                            <span class="tech-tag ai">智能控制</span>
+                        </td>
+                        <td>福州市内工业企业；项目为技改（非新建）；2025年设备投资额达规定标准；依法经营、信用良好</td>
+                        <td>技改投资补助申请表、项目备案/核准文件、设备购置清单及发票、企业营业执照、上年度审计报告</td>
+                        <td class="policy-ref"><a href="https://www.fuzhou.gov.cn/zgfzzt/sjxw/fzjx/tzgg/202603/t20260324_5299824.htm" target="_blank" rel="noopener">2026年福州市工业企业技术改造投资补助资金申报指南<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 7. 市企业技术中心 -->
+                    <tr data-level="city">
+                        <td>7</td>
+                        <td><strong>福州市企业技术中心认定</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>市工信局/市财政局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>3-4月</td>
+                        <td class="amount">10-30（国家级200）</td>
+                        <td>
+                            <span class="tech-tag hw">混凝土试验</span>
+                            <span class="tech-tag sw">BIM/仿真设计</span>
+                            <span class="tech-tag ai">质量检测AI</span>
+                        </td>
+                        <td>依法经营且盈利；研发经费占比达标（10亿以上营收&ge;2%）；技术设备原值&ge;400万元；有专职研发团队</td>
+                        <td>企业技术中心申请报告、企业技术中心评价数据表、财务报表、研发项目清单、研发团队材料</td>
+                        <td class="policy-ref"><a href="https://www.fuzhou.gov.cn/zwgk/zxwj/bmwj_1/202603/t20260330_5302402.htm" target="_blank" rel="noopener">关于组织申报认定2026年福州市企业技术中心的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 8. 市产学研项目 -->
+                    <tr data-level="city">
+                        <td>8</td>
+                        <td><strong>产学研项目补助</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>市工信局/市财政局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>3-4月</td>
+                        <td class="amount">最高100（合作费50%）</td>
+                        <td>
+                            <span class="tech-tag hw">新型混凝土材料</span>
+                            <span class="tech-tag sw">生产工艺优化</span>
+                            <span class="tech-tag ai">智能配料系统</span>
+                        </td>
+                        <td>福州市内合法经营企业；信用良好；与高校/科研院所签订产学研合作合同；项目已实现产业化</td>
+                        <td>承诺书、产学研项目申报表、合作合同、合作费用发票、产业化成果证明材料</td>
+                        <td class="policy-ref"><a href="https://www.fuzhou.gov.cn/zwgk/zxwj/bmwj_1/202603/t20260330_5302404.htm" target="_blank" rel="noopener">2026年产学研项目和工业企业创新产品项目申报指南<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 9. 市工业企业创新产品奖 -->
+                    <tr data-level="city">
+                        <td>9</td>
+                        <td><strong>工业企业创新产品奖</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>市工信局/市财政局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>3-4月</td>
+                        <td class="amount">50/项</td>
+                        <td>
+                            <span class="tech-tag hw">再生骨料产品</span>
+                            <span class="tech-tag hw">高性能管桩</span>
+                            <span class="tech-tag sw">装配式构件</span>
+                        </td>
+                        <td>产品拥有自主知识产权；技术水平达到国内先进以上；已实现产业化销售</td>
+                        <td>创新产品申报表、专利证书、第三方技术检测报告、销售合同及发票、产品鉴定或评估材料</td>
+                        <td class="policy-ref"><a href="https://www.fuzhou.gov.cn/zwgk/zxwj/bmwj_1/202603/t20260330_5302404.htm" target="_blank" rel="noopener">2026年产学研项目和工业企业创新产品项目申报指南<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 10. 市节能降耗专项资金 -->
+                    <tr data-level="city">
+                        <td>10</td>
+                        <td><strong>工业节能降耗市级专项资金</strong></td>
+                        <td><span class="category-tag">绿色制造</span></td>
+                        <td>市工信局/市财政局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>5-6月</td>
+                        <td class="amount">最高50</td>
+                        <td>
+                            <span class="tech-tag hw">节能设备改造</span>
+                            <span class="tech-tag sw">能耗监测系统</span>
+                            <span class="tech-tag hw">余热回收</span>
+                        </td>
+                        <td>福州市独立法人企业；36个月无重大安全/环保违规；节能诊断项目年节能&ge;50吨标煤；产值能耗下降5%以上</td>
+                        <td>节能项目申报表、节能诊断报告、能耗数据统计表、设备投资凭证、节能量第三方核查报告</td>
+                        <td class="policy-ref"><a href="https://www.fuzhou.gov.cn/zgfzzt/sjxw/zfxxgkzl/zc/xzgfxwj/202605/t20260518_5323561.htm" target="_blank" rel="noopener">关于组织开展工业节能降耗市级专项资金项目申报工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 11. 市高企配套奖补 -->
+                    <tr data-level="city">
+                        <td>11</td>
+                        <td><strong>高新技术企业认定市级配套奖补</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>市科技局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>高企认定后兑现</td>
+                        <td class="amount">10-20</td>
+                        <td>
+                            <span class="tech-tag hw">绿色建材</span>
+                            <span class="tech-tag sw">数字化管理</span>
+                            <span class="tech-tag hw">装配式建筑</span>
+                        </td>
+                        <td>已获得国家高新技术企业认定；企业注册地在福州市</td>
+                        <td>高企认定证书（复印件）、企业营业执照、奖补资金申请表</td>
+                        <td class="policy-ref"><a href="https://www.fuzhou.gov.cn/zgfzzt/skjj/zfxxgkzl/gkml/gzdt_31749/202606/t20260612_5333610.htm" target="_blank" rel="noopener">福州市科技局关于组织开展2026年度高新技术企业认定工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 12. 科技型中小企业评价 -->
+                    <tr data-level="city">
+                        <td>12</td>
+                        <td><strong>科技型中小企业评价</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>市科技局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>全年可申报</td>
+                        <td class="amount">研发费100%加计扣除</td>
+                        <td>
+                            <span class="tech-tag hw">混凝土技术</span>
+                            <span class="tech-tag sw">生产自动化</span>
+                            <span class="tech-tag hw">固废利用</span>
+                        </td>
+                        <td>职工总数&le;500人（或年销售&le;2亿，或资产总额&le;2亿）；拥有自主知识产权；科技人员占比&ge;10%；研发费用占比达标</td>
+                        <td>科技型中小企业评价信息表、企业营业执照、知识产权证明、研发项目立项文件</td>
+                        <td class="policy-ref">《科技型中小企业评价办法》（国科发政〔2017〕115号）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <!-- 申报规划路线图 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#128197; 申报规划路线图（按时间窗口）</h3>
+            <div class="roadmap">
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q2<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">4-6月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9312;</strong> 国家高新技术企业认定<br><span style="opacity:0.7">第一批截止6月10日 | 省科技厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9313;</strong> 省级绿色工厂认定<br><span style="opacity:0.7">4-6月 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9314;</strong> 首批次新材料生产应用奖励<br><span style="opacity:0.7">截止5月19日 | 省工信厅</span></div>
+                        <div class="roadmap-item city"><strong>&#9315;</strong> 工业节能降耗专项资金<br><span style="opacity:0.7">截止6月15日 | 市工信局</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q3<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">7-9月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9312;</strong> 国家高新技术企业认定（第二批）<br><span style="opacity:0.7">截止7月21日 | 省科技厅</span></div>
+                        <div class="roadmap-item city"><strong>&#9313;</strong> 高企认定市级配套奖补<br><span style="opacity:0.7">高企认定后兑现 | 市科技局</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">全年<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">持续</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item province"><strong>&#9312;</strong> 省级专精特新中小企业认定<br><span style="opacity:0.7">常态化申报 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9313;</strong> 企业研发经费投入奖补<br><span style="opacity:0.7">免申即享 | 省科技厅</span></div>
+                        <div class="roadmap-item city"><strong>&#9314;</strong> 科技型中小企业评价<br><span style="opacity:0.7">全年可申报 | 市科技局</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">次年<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">3-4月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item city"><strong>&#9312;</strong> 市技改投资补助<br><span style="opacity:0.7">3-4月 | 市工信局</span></div>
+                        <div class="roadmap-item city"><strong>&#9313;</strong> 市企业技术中心认定<br><span style="opacity:0.7">3-4月 | 市工信局</span></div>
+                        <div class="roadmap-item city"><strong>&#9314;</strong> 产学研项目补助<br><span style="opacity:0.7">3-4月 | 市工信局</span></div>
+                        <div class="roadmap-item city"><strong>&#9315;</strong> 工业企业创新产品奖<br><span style="opacity:0.7">3-4月 | 市工信局</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 归口部门项目分布 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#127970; 归口部门项目分布</h3>
+            <div class="unit-summary">
+                <div class="unit-card">
+                    <div class="unit-name">市工信局/市财政局</div>
+                    <div class="unit-count">5</div>
+                    <div class="unit-desc">技改补助 / 企业技术中心 / 产学研 / 创新产品 / 节能降耗</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">省科技厅/省财政厅</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">研发经费奖补 / 高企认定</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">省工信厅</div>
+                    <div class="unit-count">3</div>
+                    <div class="unit-desc">专精特新 / 绿色工厂 / 首批次新材料</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">市科技局</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">高企配套奖补 / 科技型中小企业</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 2. 政策依据汇总 ===== -->
+    <div class="section" id="policy">
+        <div class="section-title">
+            <div class="icon">2</div>
+            政策依据汇总
+        </div>
+
+        <!-- 国家级 -->
+        <div class="card policy-card">
+            <h3>国家级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> 《高新技术企业认定管理办法》（国科发火〔2016〕32号）
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> 《科技型中小企业评价办法》（国科发政〔2017〕115号）
+                </div>
+            </div>
+        </div>
+
+        <!-- 省级 -->
+        <div class="card policy-card">
+            <h3>福建省级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://zqztc.fujian.gov.cn/zcy/policy/policy/detail?id=18537" target="_blank" rel="noopener">福建省工信厅关于常态化组织开展2026年度省级专精特新中小企业认定工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="http://kjt.fujian.gov.cn/xxgk/gzdt/mtjj/202605/t20260529_7154086.htm" target="_blank" rel="noopener">福建省企业研发经费投入奖补实施细则（闽科规〔2026〕）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> 福建省工信厅《关于开展2026年度省级绿色制造申报推荐和自评价工作的通知》（闽工信函节能〔2026〕145号）
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> 福建省工信厅《关于组织开展首批次重点新材料生产应用项目申报工作的通知》（闽工信函新材〔2026〕175号）
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>5.</strong> <a href="https://czt.fj.gov.cn/zwgk/czxw/202605/t20260507_7145002.htm" target="_blank" rel="noopener">关于组织开展2026年度高新技术企业认定工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>6.</strong> 《福建省培育专精特新中小企业促进高质量发展行动计划（2024-2026年）》
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>7.</strong> 《关于推动制造业绿色低碳发展的若干措施》（闽工信规〔2025〕5号）
+                </div>
+            </div>
+        </div>
+
+        <!-- 市级 -->
+        <div class="card policy-card">
+            <h3>福州市级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> 《福州市关于扎实推进新型工业化促进制造业高质量发展总体方案》（榕政办规〔2026〕5号）
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://www.fuzhou.gov.cn/zgfzzt/sjxw/fzjx/tzgg/202603/t20260324_5299824.htm" target="_blank" rel="noopener">2026年福州市工业企业技术改造投资补助资金申报指南<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="https://www.fuzhou.gov.cn/zwgk/zxwj/bmwj_1/202603/t20260330_5302402.htm" target="_blank" rel="noopener">关于组织申报认定2026年福州市企业技术中心的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> <a href="https://www.fuzhou.gov.cn/zwgk/zxwj/bmwj_1/202603/t20260330_5302404.htm" target="_blank" rel="noopener">2026年产学研项目和工业企业创新产品项目申报指南<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>5.</strong> <a href="https://www.fuzhou.gov.cn/zgfzzt/sjxw/zfxxgkzl/zc/xzgfxwj/202605/t20260518_5323561.htm" target="_blank" rel="noopener">关于组织开展工业节能降耗市级专项资金项目申报工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>6.</strong> <a href="https://www.fuzhou.gov.cn/zgfzzt/skjj/zfxxgkzl/gkml/gzdt_31749/202606/t20260612_5333610.htm" target="_blank" rel="noopener">福州市科技局关于组织开展2026年度高新技术企业认定工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. 重要提示 + 生命周期（固定板块） ===== -->
+    <div class="section" id="tips">
+        <div class="card" style="background: #fffbeb; border-color: #f5deb3;">
+            <h3 style="color: #b8860b;">&#9888;&#65039; 重要提示</h3>
+            <p style="font-size: 13px; color: #8b7355; margin-top: 8px;">
+                本清单所列信息基于公开资料整理，仅供参考。具体申报条件、奖补金额和时间节点以各级主管部门发布的最新官方文件为准。建议企业密切关注福建省科技厅、福建省工信厅、福州市工信局、福州市科技局等部门的年度申报通知，提前做好材料准备。预计奖补金额可能因政策调整而变化，部分项目奖补金额需根据实际投资额计算。
+            </p>
+            <!-- ▼▼▼ 固定板块：项目申报全生命周期 —— 以下内容所有企业完全一致，不可修改 ▼▼▼ -->
+            <div class="lifecycle-bar">
+                <h4>&#128203; 项目申报全生命周期</h4>
+                <div class="lifecycle-steps">
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">项目申报</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">评审批复</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">资金下达</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step" style="flex: 2;">
+                        <div class="bar"></div>
+                        <div class="step-label">结项验收</div>
+                        <div class="step-pct">40%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+        </div>
+
+        <!-- ▼▼▼ 固定板块：项目咨询联系人 —— 以下内容所有企业完全一致，不可修改 ▼▼▼ -->
+        <div class="contact-bar">
+            <div class="contact-bar-title">&#128222; 项目咨询联系人</div>
+            <div class="contact-bar-name">赵璐红</div>
+            <div class="contact-bar-info">
+                <span class="cb-label">舍得酒业</span> &middot; 公共事务部总经理
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">电话</span> <a href="tel:18884606786">18884606786</a>
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">地址</span> 四川省成都市武侯区复地复城国际T1
+            </div>
+        </div>
+        <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+    </div>
+
+    <!-- ===== 折叠面板区域：企业背景信息 ===== -->
+    <div class="collapse-group" id="company">
+        <div class="collapse-group-title">&#9660; 企业详情（点击展开） &#9660;</div>
+
+        <!-- 企业概述（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127970; 企业概述</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>福建鸿生材料科技股份有限公司（曾用名：福州市鸿生建材有限公司）创立于2005年，工商注册于2011年4月，位于福建省福州市福清市，总投资6.2亿元，占地面积207亩。公司是福建省重点上市后备企业，致力于高新科技基础建材的研制与开发，是集产、供、销一条龙为一体的综合性建材企业。2025年9月23日，公司以证券简称"鸿生材料"（证券代码：874903）在全国中小企业股份转让系统（新三板）正式挂牌上市。2024年度营业收入11.92亿元，净利润6854万元。公司连续八年列入福建省重点建设项目，积极响应"一带一路"倡议，已在印度尼西亚投资建厂。</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">企业全称</div>
+                        <div class="value">福建鸿生材料科技股份有限公司</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">成立年份</div>
+                        <div class="value">2005年创立 / 2011年注册</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">法定代表人</div>
+                        <div class="value">何宝平</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册资本</div>
+                        <div class="value">43,884万元</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">股票代码</div>
+                        <div class="value">874903（新三板）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">所在地</div>
+                        <div class="value">福建省福州市福清市</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">2024年营收</div>
+                        <div class="value">11.92亿元</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">2024年净利润</div>
+                        <div class="value">6,854万元</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">员工规模</div>
+                        <div class="value">1000人以上</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">总投资</div>
+                        <div class="value">6.2亿元 / 用地207亩</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 主营业务（折叠） -->
+        <details class="collapse-section">
+            <summary>&#9881; 主营业务</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>公司主营业务涵盖数字智能化装配式预制构件、高强预应力管桩、方桩、绿色商品混凝土、再生资源循环经济等建筑材料领域。公司深耕绿色建材，在商品混凝土、预应力管桩及装配式PC构件的研发、生产和销售方面具有显著优势，同时积极布局建筑垃圾循环再生领域，推动建材行业绿色转型。</p>
+                </div>
+                <div class="biz-grid">
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f4fd;">&#9881;</div>
+                        <h4>绿色商品混凝土</h4>
+                        <p>生产销售各强度等级的绿色商品混凝土，采用先进的配合比设计技术和质量控制体系，服务于各类建筑工程项目</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8fde8;">&#127959;</div>
+                        <h4>预应力高强管桩/方桩</h4>
+                        <p>研发生产预应力高强混凝土管桩（PHC管桩）和方桩，广泛用于建筑基础工程，拥有多项专利技术</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #f3e8fd;">&#127970;</div>
+                        <h4>装配式PC构件</h4>
+                        <p>数字智能化装配式预制构件研发生产，包括预制墙板、楼板、梁柱等，推动建筑工业化转型升级</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fde8e8;">&#128260;</div>
+                        <h4>再生资源循环经济</h4>
+                        <p>建筑垃圾循环再生利用，将建筑废弃物加工为再生骨料等产品，实现资源循环利用，践行绿色发展理念</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f4fd;">&#127758;</div>
+                        <h4>海外市场拓展</h4>
+                        <p>积极响应"一带一路"倡议，已在印度尼西亚投资建厂，布局海外建材市场，拓展国际业务版图</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 资质与荣誉（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127942; 已获得的资质与荣誉</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <h3>国家级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-national">&#127942; 新三板挂牌企业（874903）</span>
+                        <span class="badge badge-national">&#127942; A级纳税人（2024-2025年度）</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>省市级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-province">&#127941; 福建省重点上市后备企业</span>
+                        <span class="badge badge-province">&#127941; 连续八年列入福建省重点建设项目</span>
+                        <span class="badge badge-city">&#127941; 福州市重点建材企业</span>
+                        <span class="badge badge-other">&#127941; ISO质量/环境/职业健康安全管理体系认证</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 近三年项目申请（折叠） -->
+        <details class="collapse-section">
+            <summary>&#128203; 近三年项目申请情况（2024-2026）</summary>
+            <div class="collapse-body">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2025年</div>
+                        <h4>新三板挂牌上市</h4>
+                        <p>2025年9月23日，公司以"鸿生材料"（874903）在全国中小企业股份转让系统正式挂牌，2024年营收11.92亿元。 <span class="status-done">已完成</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2025年</div>
+                        <h4>印度尼西亚产业园投资</h4>
+                        <p>响应"一带一路"倡议，在印尼投资建设建材产业园，拓展海外市场。 <span class="status-progress">推进中</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>建筑垃圾再生利用项目</h4>
+                        <p>布局建筑垃圾循环再生领域，研发再生骨料等绿色建材产品，推动产业升级。 <span class="status-done">已投产</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>装配式建筑PC构件产线扩建</h4>
+                        <p>扩建数字化装配式预制构件生产线，提升产能和智能化生产水平。 <span class="status-done">已完成</span></p>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+    福建鸿生材料科技股份有限公司 &middot; 2026年度奖补项目申报清单 &middot; 仅供内部参考使用 &middot; 编制日期：2026年6月16日
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    // 1. 导航平滑滚动 + 激活态切换
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 2. 表格层级筛选
+    function filterTable(level) {
+        const rows = document.querySelectorAll('#projectTable tbody tr');
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        rows.forEach(row => {
+            if (level === 'all' || row.dataset.level === level) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    // 3. 滚动监听 (Scroll Spy)
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section, .collapse-group');
+        const navLinks = document.querySelectorAll('.nav a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 4. 折叠面板：点击"企业详情"导航自动展开所有折叠面板
+    document.querySelector('.nav a[href="#company"]').addEventListener('click', function() {
+        setTimeout(() => {
+            document.querySelectorAll('.collapse-section').forEach(d => d.open = true);
+        }, 400);
+    });
+</script>
+
+</body>
+</html>
